@@ -62,6 +62,7 @@ class Engine:
 
     def engine(self, candidate, depth):
 
+
         # reached max depth of search or no possible moves
         if (depth == self.maxDepth
                 or self.board.legal_moves.count() == 0):
