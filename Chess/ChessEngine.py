@@ -21,8 +21,8 @@ class Engine:
         return compt
 
     def mateOpportunity(self):
-        if (self.board.legal_moves.count() == 0):
-            if (self.board.turn == self.color):
+        if self.board.legal_moves.count() == 0:
+            if self.board.turn == self.color:
                 return -999
             else:
                 return 999
@@ -31,8 +31,8 @@ class Engine:
 
     # to make the engine developp in the first moves
     def openning(self):
-        if (self.board.fullmove_number < 10):
-            if (self.board.turn == self.color):
+        if self.board.fullmove_number < 10:
+            if self.board.turn == self.color:
                 return 1 / 30 * self.board.legal_moves.count()
             else:
                 return -1 / 30 * self.board.legal_moves.count()
@@ -44,18 +44,18 @@ class Engine:
     # system value of it's resident
     def squareResPoints(self, square):
         pieceValue = 0
-        if (self.board.piece_type_at(square) == ch.PAWN):
+        if self.board.piece_type_at(square) == ch.PAWN:
             pieceValue = 1
-        elif (self.board.piece_type_at(square) == ch.ROOK):
+        elif self.board.piece_type_at(square) == ch.ROOK:
             pieceValue = 5.1
-        elif (self.board.piece_type_at(square) == ch.BISHOP):
+        elif self.board.piece_type_at(square) == ch.BISHOP:
             pieceValue = 3.33
-        elif (self.board.piece_type_at(square) == ch.KNIGHT):
+        elif self.board.piece_type_at(square) == ch.KNIGHT:
             pieceValue = 3.2
-        elif (self.board.piece_type_at(square) == ch.QUEEN):
+        elif self.board.piece_type_at(square) == ch.QUEEN:
             pieceValue = 8.8
 
-        if (self.board.color_at(square) != self.color):
+        if self.board.color_at(square) != self.color:
             return -pieceValue
         else:
             return pieceValue
