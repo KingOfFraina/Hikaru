@@ -1,5 +1,6 @@
 import chess as ch
 import random as rd
+import tensorflow
 
 
 class Engine:
@@ -29,7 +30,7 @@ class Engine:
         else:
             return 0
 
-    # to make the engine developp in the first moves
+    # to make the engine develop in the first moves
     def openning(self):
         if self.board.fullmove_number < 10:
             if self.board.turn == self.color:
