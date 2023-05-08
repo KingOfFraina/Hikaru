@@ -1,6 +1,5 @@
 from Chess import ChessEngine as ce
 import chess as ch
-
 class Main:
 
     def __init__(self, board=ch.Board):
@@ -44,7 +43,7 @@ class Main:
                 self.playHumanMove()
                 print(self.board)
             print(self.board)
-            print(self.board.outcome())    
+            print(self.board.outcome())
         elif color=="w":
             while (self.board.is_checkmate()==False):
                 print(self.board)
